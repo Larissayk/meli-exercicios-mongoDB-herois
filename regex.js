@@ -30,9 +30,11 @@ db.alunas.find({"livros.titulo":/t$/i}).pretty()
 
 //4-Selecione todos os nomes das alunas terminem com a letra "k" ou "o"
 db.alunas.find({$or:[{"nome":/k$/i}, {"nome":/o$/i}]}).pretty()
+db.alunas.find({"nome":{$in:[/k$/i, /o$/i]}}).pretty()
 
 //5- Selelcione todos os registros em que os nomes comecem com a letra "a"
 db.alunas.find({"nome":/^a/i}).pretty()
 
 //6- Selecione todos os registros e que nomes comecem com a letra "a" ou "h"
 db.alunas.find({$or:[{"nome":/^a/i}, {"nome":/^h/i}]}).pretty()
+db.alunas.find({"nome":{$in:[/^a/i, /^h/i]}}).pretty()
